@@ -72,7 +72,7 @@ Value proposition: Device data integrity is protected. Users know that identity 
 
 You need to have on your machine Python, Cartesi CLI, Yarn and Docker. Beside this you will need to run following steps:
 
-1. `git clone https://github.com/ilijapet/the_witness_blockchain_base_IoT_data_protection_system`
+1. `git clone https://github.com/ilijapet/The_Witness_UNICEF_blockchain_based_school_connectivity_data_protection_system`
 
 2. Install Cartesi command line tool `npm install -g @cartesi/cli` For more informations: https://docs.cartesi.io/cartesi-rollups/1.3/development/installation/
 
@@ -80,7 +80,7 @@ You need to have on your machine Python, Cartesi CLI, Yarn and Docker. Beside th
 
 4. `python -m venv .venv && source .venv/bin/activate` And then `pip install -r requirements.txt`
 
-5. Add .env files to Crtesi, Django and React frontend
+5. Add `.env` file to `cartesi_frontend` and to `cartesi_backend`. Then add `.env_dev` to backend
 
 6. Run Docker engine in background (as desktop or from command line)
 
