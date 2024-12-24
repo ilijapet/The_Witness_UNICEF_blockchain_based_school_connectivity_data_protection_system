@@ -60,8 +60,6 @@ def get_user_data(data):
     """
     Gets user data from the database
     """
-    # _, public_key = Database.get_env_var(1)
-    # digest = hash_public_key(public_key)
     user_data = database.get_data(1)
     if not user_data:
         return "reject"
@@ -77,8 +75,8 @@ def add_iot_device(data):
         public_key = data["iot_public_key"].decode("utf-8").replace("\n", "\\n").encode("utf-8")
         digest = {"uuid": hash_public_key(public_key)}
         database.insert_data(digest)
-        logger.info("New IoT public key inserted")
-        add_report(f"New uuid added {digest}")
+        logger.info("New school device ID inserted")
+        add_report(f"New id added {digest}")
         return "accept"
     except Exception as e:
         msg = f"Error {e} processing data\n{traceback.format_exc()}"

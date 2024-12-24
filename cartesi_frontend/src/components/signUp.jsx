@@ -1,4 +1,3 @@
-// import * as React from "react";
 import { useHistory } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -13,7 +12,6 @@ import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
-// import { green } from "@mui/material/colors";
 
 import { axiosInstance } from '../axios';
 import defaultTheme from '../utils';

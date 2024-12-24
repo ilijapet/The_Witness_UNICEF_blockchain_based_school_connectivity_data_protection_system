@@ -9,20 +9,21 @@ import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Title from './title';
 
-function createData(id, name, shipTo, paymentMethod, status) {
-  return { id, name, shipTo, paymentMethod, status };
+function createData(id, name, city, school, device_type) {
+  return { id, name, city, school, device_type };
 }
+
 function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function SchoolList() {
   const rows = [
-    createData(0, 'Paraguay', 'Asunción', 'AC32'),
-    createData(1, 'Serbia', 'Belgrade', 'AC32. '),
-    createData(2, 'Bangladesh', 'Dhaka', 'AC32'),
-    createData(3, 'Colombia', 'Bogota', 'AC44'),
-    createData(4, 'Venezuela', 'Caracas', 'AC32'),
+    createData(0, 'Paraguay', 'Asunción', 'Asunción', 'AC32'),
+    createData(1, 'Serbia', 'Belgrade', 'Branka Radicevica', 'AC32'),
+    createData(2, 'Bangladesh', 'Dhaka', 'Dhaka', 'AC32'),
+    createData(3, 'Colombia', 'Bogota', 'Bogota', 'AC44'),
+    createData(4, 'Venezuela', 'Caracas', 'Caracas', 'AC32'),
   ];
 
   return (
@@ -41,8 +42,9 @@ export default function SchoolList() {
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
+              <TableCell>{row.city}</TableCell>
+              <TableCell>{row.school}</TableCell>
+              <TableCell>{row.device_type}</TableCell>
               <TableCell align="right">
                 <Button
                   color="inherit"
