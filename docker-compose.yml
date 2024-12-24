@@ -1,0 +1,23 @@
+version: "3"
+services:
+  backend:
+    env_file:
+      - .env
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - 8005:8005
+    command: poetry run python -m manage runserver 0.0.0.0:8005
+  frontend:
+    build:
+      context: ./cartesi_frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./cartesi_frontend:/app
+      - /app/node_modules
+    ports:
+      - 8081:8081
+    command: yarn run dev

@@ -1,0 +1,27 @@
+  # Use an official Node.js runtime as the base image
+
+  FROM node:18
+
+  # Set the working directory in the Docker container
+
+  WORKDIR /app
+
+  # Copy package.json and package-lock.json into the Docker container
+
+  COPY package\*.json ./
+
+  # Install the project dependencies inside the Docker container
+
+  RUN yarn
+
+  # Copy the rest of the project files into the Docker container
+
+  COPY . .
+
+  # Expose the port that the Vite server will run on
+
+  EXPOSE 8081
+
+  # Start the Vite development server
+
+  CMD ["yarn", "run", "dev"]
