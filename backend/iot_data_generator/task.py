@@ -27,7 +27,7 @@ class IotDataGenerator:
         
         return hash_hex
 
-    def generate_random_iot_data(self):
+    def generate_random_device_data(self):
         env_index = random.randint(1, 1)
         self.private_key_iot, self.public_key_iot = GetVar.get_env_var(env_index)
         data = {
@@ -37,12 +37,11 @@ class IotDataGenerator:
             "latency": random.uniform(1, 100),
             "timestamp": datetime.datetime.now().isoformat(),
         }
-        print(data,  "ovde si")
         return json.dumps(data)
 
     def iot_data_generator(self, job=None):
         private_key_iot, public_key_iot = GetVar.get_env_var(1)
-        data = self.generate_random_iot_data()
+        data = self.generate_random_device_data()
         digital_signature = WitnessProtocol.sign_message(data.encode(), private_key_iot)
         body = {
             "data": data.encode(),

@@ -87,10 +87,8 @@ class SCInterface(ContractUtilities, ContractInstatiator):
 
     def sendInput(self, value: dict):
 
-        # Generating hex from value
         hex_s: str = ContractUtilities.generate_hex(value)
 
-        # Creating and sending transaction
         nonce = self.w3.eth.get_transaction_count(self.account.address)
         stored_transaction = self.contract.functions.addInput(
             self.dapp_address, hex_s
@@ -100,7 +98,6 @@ class SCInterface(ContractUtilities, ContractInstatiator):
         )
         transaction_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
         tx_receipt = self.w3.eth.wait_for_transaction_receipt(transaction_hash)
-        # print(tx_receipt)
         return transaction_hash
 
     # def sendInput(self, value: dict) -> dict:
