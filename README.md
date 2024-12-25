@@ -98,13 +98,13 @@ You need to have on your machine Python, Cartesi CLI, Yarn and Docker. Beside th
 
 2. Install Cartesi command line tool `npm install -g @cartesi/cli` For more informations [Cartesi architecture](https://docs.cartesi.io/cartesi-rollups/1.3/development/installation/)
 
-3. cd into `cartesi_backend`
+3. Add `.env` file to `cartesi_frontend` and to `cartesi_backend`. Then add `.env_dev` to backend `.env` files can be found on gist provided by email
 
-4. `python -m venv .venv && source .venv/bin/activate` And then `pip install -r requirements.txt`
+4. Run Docker engine in background (as desktop or from command line)
 
-5. Add `.env` file to `cartesi_frontend` and to `cartesi_backend`. Then add `.env_dev` to backend
+5. cd into `cartesi_backend`
 
-6. Run Docker engine in background (as desktop or from command line)
+6. `python -m venv .venv && source .venv/bin/activate` And then `pip install -r requirements.txt`
 
 7. run `cartesi build` and then `cartesi run`. Ones you type `cartesi run` you need to wait first time few minutes. Every next time Cartesi backend will be run immediately.
 
@@ -120,4 +120,4 @@ You need to have on your machine Python, Cartesi CLI, Yarn and Docker. Beside th
 
 At this point you will be able to monitor basic school communication device performance generated via our mock script in Django backend and passed through set of Cartesi contracts and then to our Cartesi dapp backend.
 
-Video walkthrough can be found here ![The Witness: UNICEF data protection network]()
+Video walkthrough can be found here [The Witness: UNICEF data protection network](https://www.youtube.com/watch?v=srVH0YLnwdA)
